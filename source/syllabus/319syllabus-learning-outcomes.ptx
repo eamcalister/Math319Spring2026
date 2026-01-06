@@ -1,0 +1,29 @@
+<section xml:id="los"><title>Learning Outcomes</title>
+  
+  <paragraphs xml:id="clos">
+    <title>Course Learning Outcomes</title>
+    <p>
+      <ul>
+        <li>
+          <p>
+           Become comfortable analyzing and visualizing data using R.
+          </p>
+        </li>
+        <li>
+          <p>
+            Understand probability as likelihood of an event via simulation.
+          </p>
+        </li>
+        <li>
+          <p>
+            Understand statistics as estimation of probability based on samples.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </paragraphs>
+
+
+
+
+</section>

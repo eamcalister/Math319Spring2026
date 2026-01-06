@@ -7,15 +7,15 @@
 
   <article xml:id="syllabus">
     <!--Enter appropriate course title-->
-    <title>Course Title Syllabus</title>
-    <subtitle>Math XXX - Spring/Summer/Fall 20XX</subtitle>
+    <title>Engineering Statistics Syllabus</title>
+    <subtitle>Math 319 - Spring 2026</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
 
   <!-- Include land acknowledgement if desired (optional)-->
-  <xi:include href="./syllabus/land-acknowledgement.ptx"/>
+  <!-- xi:include href="./syllabus/land-acknowledgement.ptx"/-->
 
   <!--include course info-->
   <xi:include href="./syllabus/syllabus-course-info.ptx" />
@@ -23,7 +23,7 @@
   <!--include learning outcomes-->
   <!--include appropriate file for indicated GTPathways courses-->
   <!--otherwise include learning outcomes for the course you are teaching (should be on Sharepoint)-->
-  <xi:include href="./syllabus/121syllabus-learning-outcomes.ptx" />
+  <xi:include href="./syllabus/319syllabus-learning-outcomes.ptx" />
 
   <!--include grading scheme and assignment types-->
   <xi:include href="./syllabus/syllabus-grading.ptx" />
