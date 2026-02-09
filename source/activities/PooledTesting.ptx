@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <!-- When creating a new activity, make a copy of this file with appropriate name -->
+        <worksheet margin="1in" bottom="1.25cm" xml:id="PooledCovid">
+            <title>More on Pooled Testing</title>
+
+            <introduction>
+                <p>
+                    Occasionally we should stop and do some follow-up on some things we've learned. It can serve as an exercise in synthesizing previously learned material and motivate things we will see in the future. In this scenario, you will play the role of a mathematician/statistician advising local authorities on how to best preserve your stock of tests for a new and disturbing virus.
+                </p>
+                <p>
+                    The virus is called Trans-Systemic Virus 4 (TSV-4). There is no cure and late stage symptoms include hallucinations, violent outbursts, and explosive diarrhea. An unknown fraction, <m>p</m>, of the population has the virus, but is pre-symptomatic. The number of tests is limited. Thus, we want to test as many people as possible while using the minimum number of tests. 
+                </p>
+            </introduction>
+
+            <exercise workspace="2in">
+                <introduction>
+                    <p>
+                        (Two Sample Pooling) Recall the pooled sample COVID testing problem. In that problem we had the probability that any individual was infected was <m>p=0.05</m>. If we pooled two samples and let <m>X</m> be the number of tests required to determine if two people have COVID, then we obtained the following probability mass function for <m>X</m>:
+                    </p>
+                        <tabular>
+                            <row header="yes" bottom="major">
+                                <cell><m>x</m></cell> <cell><m>p(x) = P(X=x)</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>0</m></cell> <cell><m>0</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>1</m></cell> <cell><m>(0.95)^2 = 0.9025</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>2</m></cell> <cell><m>0</m></cell>
+                            </row>
+                            <row>
+                                <cell><m>3</m></cell> <cell><m>1-(0.95)^2</m></cell>
+                            </row>
+
+                        </tabular>
+                    <p>
+                        We then obtained the expected value <m>E[X] = (0.95)^2 + 3(1-(0.95)^2) =1.195</m>. This is fewer than two tests, so pooling sounds like a good idea in this case.
+                    </p>
+                </introduction>
+            <task>
+                <statement>
+                    <p>
+                        We wish to consider the expected number of tests as a function of <m>p</m> when we pool two samples. Using technology of your choice, decide how high <m>p</m> can go before it becomes more economical to just test everyone individually. Write a paragraph and include some graphic that you could use to explain your answer to the local authorities.
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Now the local officials ask you the following: How do we decide how many samples to pool to minimize the number of tests we use, given that we can pool at most <m>10</m> samples together at once? Answer this for them. Again, write a paragraph and give answers that are digestible to both a math professor and the local authorities.
+                    </p>
+                </statement>
+            </task>
+            </exercise>
+
+        <exercise>
+            <introduction>
+                <p>
+                    In the previous problem, the reasoning behind the <m>(0.95)^2</m> in the first part is that selections are essentially like rolling a <m>20</m> sided die twice; unless both rolls come up <m>20</m>, we don't need to test again. This is saying the person A being positive is independent of person B being positive. We wish to explore whether this is really true, and if not, is it close enough?
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Consider the following scenario: A population of <m>10</m> individuals has a positivity rate of <m>50\%</m>. Use simulation to estimate the probability of choosing two people out of the <m>10</m> who are both negative. Is it <m>(0.5)^2</m>? What is the reason?
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        What circumstances of our problem could make the estimate of <m>(0.95)^2</m> reasonable?
+                    </p>
+                </statement>
+            </task>
+        </exercise>
+        
+        </worksheet>
