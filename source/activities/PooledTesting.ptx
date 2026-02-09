@@ -3,7 +3,7 @@
     <!-- When creating a new activity, make a copy of this file with appropriate name -->
         <worksheet margin="1in" bottom="1.25cm" xml:id="PooledCovid">
             <title>More on Pooled Testing</title>
-
+<page>
             <introduction>
                 <p>
                     Occasionally we should stop and do some follow-up on some things we've learned. It can serve as an exercise in synthesizing previously learned material and motivate things we will see in the future. In this scenario, you will play the role of a mathematician/statistician advising local authorities on how to best preserve your stock of tests for a new and disturbing virus.
@@ -55,7 +55,8 @@
                 </statement>
             </task>
             </exercise>
-
+        </page>
+        <page>
         <exercise>
             <introduction>
                 <p>
@@ -77,5 +78,5 @@
                 </statement>
             </task>
         </exercise>
-        
+    </page>        
         </worksheet>
