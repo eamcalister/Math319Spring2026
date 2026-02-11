@@ -52,6 +52,9 @@
                     <p>
                         Now the local officials ask you the following: How do we decide how many samples to pool to minimize the number of tests we use, given that we can pool at most <m>10</m> samples together at once? Answer this for them. Again, write a paragraph and give answers that are digestible to both a math professor and the local authorities.
                     </p>
+                    <p>
+                        <em>Note:</em> The optimal pool size should depend on <m>p</m>. Your answer should be something like "For <m>p</m> in some range, the optimal size is <em>blank</em>. For this other range, it's <em>something else</em>."
+                    </p>
                 </statement>
             </task>
             </exercise>
