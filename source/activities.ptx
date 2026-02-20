@@ -11,6 +11,7 @@
       </p>
     </introduction>
     <xi:include href="./activities/PooledTesting.ptx"/>
+    <xi:include href="./activities/DiscreteRVModels.ptx"/>
 
     
 

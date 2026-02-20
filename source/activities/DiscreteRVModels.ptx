@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <!-- When creating a new activity, make a copy of this file with appropriate name -->
+        <worksheet margin="1in" bottom="1.25cm" xml:id="DiscreteRVModels">
+            <title>Discrete Random Variable Models</title>
+<page>
+            <introduction>
+                <p>
+                    In this activity we will practice recognizing scenarios that use each of four known discrete random variable types (two of which are new in this activity). We will also see how they might belnd together and introduce the basic idea of a hypothesis test.
+                </p>
+
+            </introduction>
+
+            <paragraphs>
+                <title>Basic Discrete Random Variables and What They Model</title>
+                <p>
+                    Each of the following descriptions is really a theorem. For the purposes of this class, they are definitions and the probability mass functions and cumulative distribution functions for them are given by the appropriate R commands with <c>d</c> and <c>p</c> commands, respectively. 
+                </p>
+            <dl>
+                <li>
+                    <title>Binomial</title>
+                    <p>
+                        If <m>X</m> counts the number of successes in <m>n</m> independent and identically distributed Bernoulli trials, each with probability of success <m>p</m>, then <m>X \sim \text{Binom}(n, p)</m>. 
+                    </p>
+                    <p>
+                        The expected value of a binomial random variable is <m>E[X] = np</m> and the variance is <m>Var(X) = n(p-p^2)</m>.
+                    </p>
+                </li>
+                <li>
+                    <title>Geometric</title>
+                    <p>
+                        Let <m>X</m> be the random variable that counts the number of failures before the first success in a Bernoulli process with probability of success <m>p</m>. Then <m>X</m> is a geometric random variable.
+                    </p>
+                    <p>
+                        The expected value of a geometric random variable is <m>E[X] = \frac{1-p}{p}</m>.
+                    </p>
+                </li>
+                <li>
+                <title>Poisson</title>
+                    <p>
+                        If <m>X</m> counts the number of randomly occurring and relatively rare events of the same type, that occur with a frequency of <m>\lambda</m> per time unit, then <m>X</m> is a Poisson random variable with rate <m>\lambda</m>.
+                    </p>
+                    <p>
+                        The expected value of a Poisson random variable is <m>E[X] = \lambda</m> and the variance is also <m>Var(X) = \lambda</m>.
+                    </p>
+                </li>
+                <li>
+                    <title>Hypergeometric</title>
+                    <p>
+                        If <m>X</m> counts the number successes in <m>k</m> draws <em>without replacement</em> from a finite population of with <m>m</m> successes and <m>n</m> failures, then <m>X</m> is a hypergeometric random variable with parameters <m>m</m>, <m>n</m>, and <m>k</m>, i.e. <m>X \sim \text{Hyper}(m,n,k)</m>.
+                    </p>
+                    <p>
+                        The expected value of a hypergeometric random variable is <m>E[X] = kp</m>.
+                    </p>
+                </li>
+            </dl>
+            <p>
+                In the following exercises you will need to recognize which random variables should be in the given scenario, then do whatever calculations are indicated using R. Your write-ups should include <em>all</em> your reasoning and any R code you used.
+            </p>
+        
+                
+            </paragraphs>
+
+
+
+        </page>
+
+        <page>
+        <exercise>
+            <introduction>
+                <p>
+                    A high-volume line produces items with independent defect probability <m>p=0.05</m>. You test items one by one. Let <m>X</m> be the number of tests before the first defective item is found.
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        What type of random variable is <m>X</m> and what are its parameters? Explain.
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Compute <m>P(X\geq 10)</m>.
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Now suppose you test <m>100</m> items after the first defective item is found and let <m>Y</m> be the total number of defective items found. What is <m>E[Y]</m> and <m>P(Y &lt; 3 )</m>? Explain your answer completely.
+                    </p>
+                </statement>
+            </task>
+        </exercise>
+
+        <exercise>
+            <introduction>
+                <p>
+                    Ski chairlifts stop randomly because of gapers who can't figure out how to sit down on a chair. For a specific lift, the average number of stops per <m>10</m>-minute period is <m>1.8</m> (on a typical day). Let <m>X</m> be the number of stops you count on a <m>10</m>-minute ride to the top of the mountain.
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        What type of random variable is <m>X</m> and what are its parameters? Explain.
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Find the probability of no stops on a ride of this lift, as well as the probability of three or more stops.
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        (A hypothesis test, done informally.) Suppose you count seven stops on a single ride. What is the probability of this happening given the parameters of the random variable given above? Should you conclude this is not a "typical" day on the mountain (maybe it's Spring break for public schools in Dallas)? 
+                    </p>
+                </statement>
+            </task>
+        </exercise>
+
+        <exercise>
+            <introduction>
+                <p>
+                    A manufacturer of electronic components receives a shipment of <m>800</m> microchips, of which <m>72</m> are defective. The manufacturer does not know how many are defective, but does not want to test all <m>800</m> chips. So, they test <m>k</m> of them, one at a time, without replacement. Letting <m>X</m> denote the number of defective chips they find (which must depend on <m>k</m>), they can compute <m>X\cdot \frac{800}{k}</m> to estimate the number of defective chips in the shipment.
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        What types of random variable is <m>X</m>? Explain.
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        What is the expected value of <m>X\cdot \frac{800}{k}</m>? Use one of the expected values of the basic random variables given above and a result from the text to justify.
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Simulate <m>X</m> using the appropriate <c>r</c> prefixed function in R. Use this to answer the following: How large must <m>k</m> be so that <m>X\cdot \frac{800}{k}</m> is within <m>10</m> of the true value of <m>72</m> for <m>90</m> percent of the simulations?
+                    </p>
+                </statement>
+            </task>
+        </exercise>
+            
+
+
+        </page>
+    
+        </worksheet>
