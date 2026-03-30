@@ -14,10 +14,10 @@
                     </li>
                     <li>
                         <p>
-                            Replicate sample from a known population to see how far off using a <m>t</m>-test can be when its hypotheses are not satisfied.
+                            Replicate sample from a known population to see how far off type I error can be using a <m>t</m>-test can be when its hypotheses are not satisfied.
                         </p>
                         <p>
-                            Do some data wrangling to do a paired <m>t</m>-test that is reasonably accurate.
+                            Replicate from a sample and apply a valid <m>t</m>-test that has a very high type II error rate.
                         </p>
                     </li>
                 </ul>
