@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <!-- When creating a new activity, make a copy of this file with appropriate name -->
+        <worksheet margin="1in" bottom="1.25cm" xml:id="BaseballHypotheses">
+            <title>Understanding Hypothesis Testing</title>
+<page>
+            
+            <objectives>
+                <ul>
+                    <li>
+                        <p>
+                            Understand what the <m>p</m>-value really is.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Replicate sample from a known population to see how far off using a <m>t</m>-test can be when its hypotheses are not satisfied.
+                        </p>
+                        <p>
+                            Do some data wrangling to do a paired <m>t</m>-test that is reasonably accurate.
+                        </p>
+                    </li>
+                </ul>
+            </objectives>
+            
+            <introduction>
+                <p>
+                    In this activity we will try to gain a deeper understading of using <m>t</m>-tests to test hypotheses about the mean. We will do this by looking at home runs in Major League baseball. We are using this data for several reasons. First, we have access to the population data. Second, home run data does not really fit the hypotheses of the <m>t</m>-test. Finally, we can get some practice data wrangling so the the <m>t</m>-test is acceptable.
+                </p>
+
+            </introduction>
+
+            <exercise>
+                <introduction>
+                    <p>
+                        In this exercise we will make sure we know what a <m>p</m>-value really is.
+                    </p>
+                    <task>
+                        <statement>
+                            <p>
+                                Write code to do the following: 
+                                <ul>
+                                    <li>
+                                        <p>
+                                            Create a sample of size <m>15</m> from a normal population with mean <m>\mu = 0</m> and standard deviation <m>\sigma = 1</m>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Perform a <m>t</m>-test with the null hypothesis that <m>\mu = 0</m>. Because you will want to extract information from this test, assign it the name <c>test</c>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Extract the <m>p</m>-value using <c>test$p.value</c> and get a <c>TRUE</c> or <c>FALSE</c> value depending pn whether or not <m>p</m> is less than <m>0.05</m>.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                Questions:
+                                <ul>
+                                    <li>
+                                        <p>
+                                            Is the null hypothesis true?
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Any time the above code gives a <c>TRUE</c>, you reject the null hypothesis. What percent of the time will this happen?
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+
+                        </statement>
+                    </task>
+                    <task>
+                        <statement>
+                            <p>
+                                Replicate the above code <m>10,000</m> times and take a mean to estimate the probability of rejecting the null hypothesis. Does the answer make sense?
+                            </p>
+                        </statement>
+                    </task>
+                </introduction>
+            </exercise>
+
+            <definition><title>Type I Error</title>
+                <statement>
+                    <p>
+                       <term>Type I error</term> is rejecting the null hypothesis when it is true. When we set a significance level, <m>\alpha</m>, we are setting an acceptable probability of type I error. In a properly constructed <m>t</m>-test, when the null hypothesis is true, we will commit a type I error <m>\alpha\times 100 \%</m> of the time.
+                    </p>
+                </statement>
+            </definition>
+            <p>
+                Now we will consider how the probability of type I error can be far off from what it is supposed to be by considering home run data.
+            </p>
+
+        </page>
+
+        <page>
+            <exercise>
+                <introduction>
+                    <p>
+                        Use the dataset <c>batting &lt;- Lahman::Batting</c> for the remainder of this worksheet. We will be considering variable <c>HR</c>, but we will filter on other variables later in the worksheet.
+                    </p>
+                </introduction>
+                <task>
+                    <statement>
+                        <p>
+                            Letting <m>X_i</m> be the <m>i</m>-th entry in the <c>HR</c> column, are the random variables <m>X_i</m> iid? (Answer: No, they are neither independent nor are they identically distributed. Why?)
+                        </p>
+                    </statement>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            Are the <m>X_i</m> normally distributed (even approximately)?
+                        </p>
+                    </statement>
+                </task>
+            </exercise>
+
+            <exercise>
+                <introduction>
+                    <p>
+                        Now we wish to (mindlessly) apply a <m>t</m>-test to <c>batting$HR</c> and see what the effective type I error rate is.  
+                    </p>
+                </introduction>
+                <task>
+                    <statement>
+                        <p>
+                            Find the mean of <c>batting$HR</c>. Call it <m>\mu_0</m>.
+                        </p>
+                    </statement>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            Modify the code from 1a to sample <m>15</m> values from <c>batting$HR</c> and do a <m>t</m>-test for whether the mean is equal to <m>\mu_0</m>. Replicate <m>10,000</m> times to see the frequency that we erroneously reject the null hypothesis (which <em>is true</em>).
+                        </p>
+                    </statement>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            Redo the above exercise with increasing sample sizes. How big does the sample need to be before the effective type I error rate is approximately <m>\alpha = 0.05</m>?
+                        </p>
+                    </statement>
+                </task>
+            </exercise>
+
+            <exercise>
+                <introduction>
+                    <p>
+                        Now we will want to do some data filtering to see if we can make using a <m>t</m>-test more appropriate. For this we will need to include <c>library(dplyr)</c> in our code chunk (dplyr is a topic in Chapter 6 of the textbook).
+                    </p>
+                </introduction>
+                <task>
+                    <statement>
+                        <p>
+                            Run the code:
+                        </p>
+                        <p>
+                            <c>batting_recent &lt;- batting %&lt;% filter(yearID &gt; 1994) %&lt;% filter(HR &gt; 0)</c>
+                        </p>
+                        <p>
+                            Why should this improve the type I error rate of the tests from problem 2? Explain your answer using plots and/or some theory.
+                        </p>
+                    </statement>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            Redo the replication from problem 2, but on this new modified data set. Now how large does the sample need to be to get an effective type I error rate close to <m>0.05</m>?
+                        </p>
+                    </statement>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            Do some other filtering that you think might may improve our situation further. Explain your reasoning for this filtering and redo the replication to see if it really improved things.
+                        </p>
+                    </statement>
+                </task>
+            </exercise>
+
+        </page>
+        <page>
+            <definition><title>Type II Error</title>
+                <statement>
+                    <p>
+                       <term>Type II error</term> is failing to reject the null hypothesis when it is false. The probability of type II error is typically denoted by <m>\beta</m>. The probability of correctly rejecting the false null hypothesis is <m>1-\beta</m>, and is called the <term>power</term>.
+                    </p>
+                </statement>
+            </definition>
+
+            <exercise>
+                <introduction>
+                    <p>
+                        Now create two new data sets that consist of seasons with <c>yearID</c> from 1994 to 2004, and after 2004, respectively (these are the "steroid" and "post-steroid" eras). Filter further to only include hitters with more than <m>100</m> at bats (AB). Create a new variable in each data set that is rate=HR/AB.
+                    </p>
+                </introduction>
+                <task>
+                    <statement>
+                        <p>
+                            Perform a two sample <m>t</m>-test, on a random sample of 200 players from each era, to test whether players in the steroid era had a significantly different HR rate. (By finding the mean HR rates from each era we can tell the null hypothsis is <em>false</em>.)
+                        </p>
+                    </statement>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            Now replicate the above test <m>10,000</m> times to estimate the type II error rate. What is the power of this two sample <m>t</m>-test?
+                        </p>
+                    </statement>
+                </task>
+                <conclusion>
+                    <p>
+                    This is a situation where the only practical way to increase the power of the <m>t</m>-test is to use a very large sample (here, one that is close to the full population). This is because the effect of era on HR rate is small compared to the substantial variability due to other factors, such as player ability and playing time. As a result, although the <m>t</m>-test is valid, strong conclusions based on a modest sized sample may not be advised. In contrast, in situations where the variable being tested is a primary source of variation, a <m>t</m>-test based on a smaller sample may yield more conclusive results.
+                    </p>
+                </conclusion>
+            </exercise>
+
+        </page>
+      
+        </worksheet>

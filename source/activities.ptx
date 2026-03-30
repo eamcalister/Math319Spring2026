@@ -12,7 +12,7 @@
     </introduction>
     <xi:include href="./activities/PooledTesting.ptx"/>
     <xi:include href="./activities/DiscreteRVModels.ptx"/>
-
+    <xi:include href="./activities/BaseballHypotheses.ptx"/>
     
 
     <!-- Add more xi:include files here to include them in the main course -->
