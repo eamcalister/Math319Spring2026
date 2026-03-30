@@ -52,7 +52,7 @@
                                     </li>
                                     <li>
                                         <p>
-                                            Extract the <m>p</m>-value using <c>test$p.value</c> and get a <c>TRUE</c> or <c>FALSE</c> value depending pn whether or not <m>p</m> is less than <m>0.05</m>.
+                                            Extract the <m>p</m>-value using <c>test$p.value</c> and get a <c>TRUE</c> or <c>FALSE</c> value depending on whether or not <m>p</m> is less than <m>0.05</m>.
                                         </p>
                                     </li>
                                 </ul>
@@ -62,12 +62,12 @@
                                 <ul>
                                     <li>
                                         <p>
-                                            Is the null hypothesis true?
+                                            (1 points) Is the null hypothesis true?
                                         </p>
                                     </li>
                                     <li>
                                         <p>
-                                            Any time the above code gives a <c>TRUE</c>, you reject the null hypothesis. What percent of the time will this happen?
+                                            (2 points) Any time the above code gives a <c>TRUE</c>, you reject the null hypothesis. What percent of the time should this happen?
                                         </p>
                                     </li>
                                 </ul>
@@ -78,7 +78,7 @@
                     <task>
                         <statement>
                             <p>
-                                Replicate the above code <m>10,000</m> times and take a mean to estimate the probability of rejecting the null hypothesis. Does the answer make sense?
+                                (2 points) Replicate the above code <m>10000</m> times and take a mean to estimate the probability of rejecting the null hypothesis. Does the answer make sense?
                             </p>
                         </statement>
                     </task>
@@ -108,14 +108,14 @@
                 <task>
                     <statement>
                         <p>
-                            Letting <m>X_i</m> be the <m>i</m>-th entry in the <c>HR</c> column, are the random variables <m>X_i</m> iid? (Answer: No, they are neither independent nor are they identically distributed. Why?)
+                            (3 points) Letting <m>X_i</m> be the <m>i</m>-th entry in the <c>HR</c> column, are the random variables <m>X_i</m> iid? (Answer: No, they are neither independent nor are they identically distributed. Why?)
                         </p>
                     </statement>
                 </task>
                 <task>
                     <statement>
                         <p>
-                            Are the <m>X_i</m> normally distributed (even approximately)?
+                            (2 points) Are the <m>X_i</m> normally distributed (even approximately)? Justify your answer.
                         </p>
                     </statement>
                 </task>
@@ -130,21 +130,21 @@
                 <task>
                     <statement>
                         <p>
-                            Find the mean of <c>batting$HR</c>. Call it <m>\mu_0</m>.
+                            (1 point) Find the mean of <c>batting$HR</c>. Call it <m>\mu_0</m>.
                         </p>
                     </statement>
                 </task>
                 <task>
                     <statement>
                         <p>
-                            Modify the code from 1a to sample <m>15</m> values from <c>batting$HR</c> and do a <m>t</m>-test for whether the mean is equal to <m>\mu_0</m>. Replicate <m>10,000</m> times to see the frequency that we erroneously reject the null hypothesis (which <em>is true</em>).
+                            (2 points) Modify the code from 1a to sample <m>15</m> values from <c>batting$HR</c> and do a <m>t</m>-test for whether the mean is equal to <m>\mu_0</m>. Replicate <m>10000</m> times to see the frequency that we erroneously reject the null hypothesis (which <em>is true</em>).
                         </p>
                     </statement>
                 </task>
                 <task>
                     <statement>
                         <p>
-                            Redo the above exercise with increasing sample sizes. How big does the sample need to be before the effective type I error rate is approximately <m>\alpha = 0.05</m>?
+                            (2 points) Redo the above exercise with increasing sample sizes. How big does the sample need to be before the effective type I error rate is approximately <m>\alpha = 0.05</m>?
                         </p>
                     </statement>
                 </task>
@@ -162,24 +162,24 @@
                             Run the code:
                         </p>
                         <p>
-                            <c>batting_recent &lt;- batting %&lt;% filter(yearID &gt; 1994) %&lt;% filter(HR &gt; 0)</c>
+                            <c>batting_recent &lt;- batting %&gt;% filter(yearID &gt; 1994) %&gt;% filter(HR &gt; 0)</c>
                         </p>
                         <p>
-                            Why should this improve the type I error rate of the tests from problem 2? Explain your answer using plots and/or some theory.
-                        </p>
-                    </statement>
-                </task>
-                <task>
-                    <statement>
-                        <p>
-                            Redo the replication from problem 2, but on this new modified data set. Now how large does the sample need to be to get an effective type I error rate close to <m>0.05</m>?
+                            (2 points) Why should this improve the type I error rate of the tests from problem 2? Explain your answer using plots and/or some theory.
                         </p>
                     </statement>
                 </task>
                 <task>
                     <statement>
                         <p>
-                            Do some other filtering that you think might may improve our situation further. Explain your reasoning for this filtering and redo the replication to see if it really improved things.
+                            (2 points) Redo the replication from problem 2, but on this new modified data set. Now how large does the sample need to be to get an effective type I error rate close to <m>0.05</m>?
+                        </p>
+                    </statement>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            (1 point) What additional filtering could you do to improve the situation further? Explain your reasoning, but don't actually do it (we want to use this data set for the next problem).
                         </p>
                     </statement>
                 </task>
@@ -204,14 +204,14 @@
                 <task>
                     <statement>
                         <p>
-                            Perform a two sample <m>t</m>-test, on a random sample of 200 players from each era, to test whether players in the steroid era had a significantly different HR rate. (By finding the mean HR rates from each era we can tell the null hypothsis is <em>false</em>.)
+                            (3 points) Perform a two sample <m>t</m>-test, on a random sample of 200 players from each era, to test whether players in the steroid era had a significantly different HR rate. (By finding the mean HR rates from each era we can tell the null hypothsis is <em>false</em>.)
                         </p>
                     </statement>
                 </task>
                 <task>
                     <statement>
                         <p>
-                            Now replicate the above test <m>10,000</m> times to estimate the type II error rate. What is the power of this two sample <m>t</m>-test?
+                            (2 points) Now replicate the above test <m>10000</m> times to estimate the type II error rate. What is the power of this two sample <m>t</m>-test?
                         </p>
                     </statement>
                 </task>
